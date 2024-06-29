@@ -1,0 +1,124 @@
+.common {
+    width: 100%;
+}
+
+.common__title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form--error {
+    color: #ff0000;
+    margin-left: 40%;
+    font-size: 14px;
+}
+
+.form__group {
+    margin-top: 30px;
+}
+
+.form__group-title {
+    align-self: center;
+}
+
+.form__group-content {
+    width: 60%;
+}
+
+input {
+    height: 40px;
+    padding: 0 15px;
+}
+textarea{
+    padding:15px;
+    font-size: 14px;
+    font-family: auto;
+}
+
+.form__group-content input,
+.form__group-content textarea {
+    width: 100%;
+    background: #f4f4f4;
+    border: none;
+}
+
+.form__group--radio {
+    display: flex;
+}
+
+.form__group-content--radio {
+    margin-left: 30%;
+}
+
+.form__input-radio {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.form__input-radio input {
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #82756b;
+    cursor: pointer;
+}
+
+.form__input-radio input:checked {
+    border: 8px solid #82756b;
+}
+
+.form__group-content--radio {
+    text-align: left;
+}
+
+.form__group-content select {
+    width: 50%;
+    background: #f4f4f4;
+    height: 40px;
+    border: none;
+    padding: 0 15px;
+}
+
+.form__group-content .form__input-text {
+    width: 45%;
+    background: #f4f4f4;
+}
+
+
+.form__group-content .form__input-number {
+    text-align: center;
+}
+
+.form__group-content span {
+    margin: auto 15px;
+}
+
+.form__label span {
+    color: #ff0000;
+}
+
+.form__bottun {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.form__bottun-submit {
+    color: #eee;
+    background: #82756b;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}

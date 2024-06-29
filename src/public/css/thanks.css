@@ -1,0 +1,38 @@
+.thanks {
+    width: 100%;
+    text-align: center;
+}
+
+.content--background {
+    display: inline-block;
+    color: #f9f2ec;
+    font-size: 150px;
+    position: relative;
+    margin: 100px;
+}
+
+.content__text {
+    color: #82756b;
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content__button {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content__button--link {
+    color: #eee;
+    background: #82756b;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

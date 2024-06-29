@@ -1,0 +1,26 @@
+body {
+    max-width: 1230px;
+}
+
+* {
+    color: #9b651ec3;
+}
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #edc9a0c3;
+    display: flex;
+    justify-content: right;
+}
+
+.header__title {
+    padding: 20px;
+    margin: auto;
+    transform: translateX(10%);
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    background: #f1ece6;
+}

@@ -1,0 +1,14 @@
+body {
+    max-width: 1230px;
+}
+
+* {
+    color: #9b651ec3;
+}
+
+.header__title {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #edc9a0c3;
+    text-align: center;
+}

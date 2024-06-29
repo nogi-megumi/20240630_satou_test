@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// お問い合わせフォームへの処理
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/thanks', [ContactController::class, 'thanks']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 管理画面への処理
+Route::get('/register',[AuthController::class,'index']);
+Route::post('register',[AuthController::class,'register']);
+Route::post('/login',[AuthController::class,'login']);
+Route::post('admin',[AuthController::class,'admin']);

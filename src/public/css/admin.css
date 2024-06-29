@@ -1,0 +1,54 @@
+.header__button {
+    padding-top: 30px 0;
+}
+
+.header__button--switch {
+    border: 1px solid #edc9a0c3;
+    color: #edc9a0c3;
+    background: #f4f4f4;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.content__title {
+    margin-top: 0;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+.admin{
+    width: 90%;
+    margin: auto;
+}
+.search-form{
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    height: 40px;
+}
+.search-form__button{
+    color: #eee;
+    border: none;
+}
+.search-form__button--search{
+    background-attachment: #82756b;
+    padding: 10px 30px;
+}
+.search-form__button--reset{
+    background:#D9C6B5 ;  
+    padding: 10px 20px;
+}
+table{
+    width: 100%;
+}
+th{
+    background: #82756b;
+    color: #eee;
+    height: 40px;
+}
+.search-result__table-row{
+    border: 1px solid #82756b;
+}
+td{
+    pad: 20px 0;
+}
