@@ -24,7 +24,7 @@
             <input type="email" name="email" value="{{old('email')}}" placeholder="例：text@example.com">
             <div class="form--error">
                 @error('email')
-                {{$message('email')}}
+                {{$message}}
                 @enderror
             </div>
         </div>
@@ -33,7 +33,7 @@
             <input type="password" name="password" value="{{old('password')}}" placeholder="例：coachtech1106">
             <div class="form--error">
                 @error('password')
-                {{$message('password')}}
+                {{$message}}
                 @enderror
             </div>
         </div>

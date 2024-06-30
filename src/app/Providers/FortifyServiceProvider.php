@@ -14,6 +14,9 @@ use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use App\Http\Requests\AuthRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Contracts\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -22,7 +25,13 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse
+        {
+            public function toResponse($request)
+            {
+                return redirect('/login');
+            }
+        });
     }
 
     /**
@@ -31,6 +40,7 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
+
         // Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         // Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         // Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
@@ -41,14 +51,17 @@ class FortifyServiceProvider extends ServiceProvider
         //     return Limit::perMinute(5)->by($throttleKey);
         // });
 
-        Fortify::registerView(function(){
+
+        Fortify::registerView(function () {
             return view('auth.register');
         });
-        Fortify::loginView(function(){
+
+        Fortify::loginView(function () {
             return view('auth.login');
         });
+
         RateLimiter::for('login', function (Request $request) {
-            $email=(string) $request->email;
+            $email = (string) $request->email;
             return Limit::perMinute(10)->by($email . $request->ip());
         });
     }

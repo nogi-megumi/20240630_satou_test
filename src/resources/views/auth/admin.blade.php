@@ -5,14 +5,14 @@
 
 @section('button')
 <div class="header__button">
-    {{-- @if (Auth:check()) --}}
+    @if (Auth::check())
     <form action="/logout" method="POST">
         @csrf
         <button class="header__button--switch" type="submit">
             logout
         </button>
     </form>
-    {{-- @endif --}}
+    @endif
 </div>
 @endsection
 @section('content')
@@ -21,7 +21,7 @@
 </h1>
 <div class="admin">
     <div class="search--flex">
-        <form class="search-group search--flex" action="/admin/search" method="POST">
+        <form class="search-group search--flex" action="/admin/search" method="GET">
             <div class="search-form search--flex">
                 @csrf
                 <input type="text" name="keyword" value="{{old('keyword')}}" placeholder="名前やメールアドレスを入力してください">
@@ -37,13 +37,13 @@
                     <option value="{{$category['id']}}">{{$category['content']}}</option>
                     @endforeach
                 </select>
-                <input type="date" value="">
+                <input type="date" value="{{old('date')}}">
                 <div class="search-form__button">
                     <button class="search-form__button search-form__button--search" type="submit">検索</button>
                 </div>
             </div>
         </form>
-        <form action="/admin" method="GET">
+        <form action="/admin" method="POST">
             @csrf
             <div class="search-form__button"><button class="search-form__button search-form__button--reset">リセット
                 </button>
@@ -87,7 +87,7 @@
                 <td><button popovertarget="detail" popovertargetaction="show">詳細</button>
                     <div popover id="detail">
                         <button class="popover__close-button" popovertarget=detail poovertargetaction="hide">×</button>
-                        <form action="/auth/delete" method="POST">
+                        <form action="/admin/delete" method="POST">
                             @method('delete')
                             @csrf
                             <table class="popover__table">
