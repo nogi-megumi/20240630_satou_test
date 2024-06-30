@@ -5,19 +5,19 @@
 
 @section('button')
 <div class="header__button">
-    <button class="header__button--switch" type="submit">
+    <a class="header__button--switch" href="/register">
         register
-    </button>
+    </a>
 </div>
 @endsection
 
 @section('content')
 
-<h1 class="content__title">
+<h1 class="title">
     Login
 </h1>
-<div class="content__form">
-    <form action="/login" method="POST">
+<div class="content">
+    <form class="content__form" action="/login" method="POST">
         @csrf
         <div class="content__form-item">
             <label>メールアドレス</label>
@@ -26,6 +26,7 @@
                 @error('email')
                 {{$message('email')}}
                 @enderror
+            </div>
         </div>
         <div class="content__form-item">
             <label>パスワード</label>
@@ -34,6 +35,7 @@
                 @error('password')
                 {{$message('password')}}
                 @enderror
+            </div>
         </div>
         <div class="content__button">
             <button class="content__bottun-submit">

@@ -11,7 +11,6 @@ class ContactController extends Controller
 {
     public function index()
     {
-        // return view('login');
         $categories = Category::all();
         return view('index', compact('categories'));
     }

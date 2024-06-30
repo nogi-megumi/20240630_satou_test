@@ -13,13 +13,16 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// お問い合わせフォームへの処理
+
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'thanks']);
 
-// 管理画面への処理
-Route::get('/register',[AuthController::class,'index']);
-Route::post('register',[AuthController::class,'register']);
-Route::post('/login',[AuthController::class,'login']);
-Route::post('admin',[AuthController::class,'admin']);
+// 管理画面への処理 認証機能が上手く実装できませんでした。
+
+// Route::middleware('auth')->group (function(){
+Route::post('/register', [AuthController::class, 'index']);
+Route::post('/login', [AuthController::class, 'index']);
+Route::get('/admin', [AuthController::class, 'index']);
+Route::get('/admin/search', [AuthController::class, 'search']);
+// });

@@ -8,31 +8,34 @@
     background: #f4f4f4;
     cursor: pointer;
     padding: 10px;
+    text-decoration: none;
 }
 
-.content__title {
+.title {
     margin-top: 0;
     padding-top: 40px;
     margin-bottom: 30px;
 }
 
-form {
+.content__form {
     border: 1px solid #9b651ec3;
     padding: 30px 40px;
     background: #eee;
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
 .content__form-item {
-    margin-bottom: 40px;
+    width: 70%;
+    margin: 0 auto 40px;
 }
 
 label {
     font-size: 16px;
-    margin:0 auto 10px;
+    margin-bottom: 10px;
     display: block;
     width: 50%;
+    text-align: left;
 }
 
 input {
@@ -40,7 +43,7 @@ input {
     height: 40px;
     padding-left: 15px;
     background: #f4f4f4;
-    width: 50%;
+    width: 100%;
 }
 
 .form--error {

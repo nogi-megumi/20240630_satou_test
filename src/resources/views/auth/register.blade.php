@@ -5,19 +5,19 @@
 
 @section('button')
 <div class="header__button">
-    <button class="header__button--switch" type="submit">
-        register
-    </button>
+    <a class="header__button--switch" href="/login">
+        login
+    </a>
 </div>
 @endsection
 
 @section('content')
 
-<h1 class="content__title">
+<h1 class="title">
     Register
 </h1>
-<div class="content__form">
-    <form action="/register" method="POST">
+<div class="form">
+    <form class="content__form" action="/register" method="POST">
         @csrf
         <div class="content__form-item">
             <label>お名前</label>
@@ -25,8 +25,8 @@
             <div class="form--error">
                 @error('name')
                 {{$message('name')}}
-            @enderror
-        </div>
+                @enderror
+            </div>
         </div>
         <div class="content__form-item">
             <label>メールアドレス</label>

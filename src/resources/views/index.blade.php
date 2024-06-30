@@ -13,17 +13,17 @@
                 <label class="form__label">お名前<span> ※</span></label>
             </div>
             <div class="form__group-content flex">
-                <input class="form__input-text" type="text" name="first_name" placeholder="例：山田"
-                    value="{{old('first_name')}}">
-                <input class="form__input-text" type="text" name="last_name" placeholder="例：太郎"
+                <input class="form__input-text" type="text" name="last_name" placeholder="例：山田"
                     value="{{old('last_name')}}">
+                <input class="form__input-text" type="text" name="first_name" placeholder="例：太郎"
+                    value="{{old('first_name')}}">
             </div>
         </div>
         <div class="form--error">
-            @error('first_name')
+            @error('last_name')
             {{$message}}
             @enderror
-            @error('last_name')
+            @error('first_name')
             <br>{{$message}}
             @enderror
         </div>
